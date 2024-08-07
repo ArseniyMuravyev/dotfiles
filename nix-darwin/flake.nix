@@ -53,6 +53,19 @@
 	      "alacritty"
         "alt-tab"
       ];
+      homebrew.brews = [
+        "git"
+        "zoxide"
+        "eza"
+        "starship"
+        "neovim"
+        "node"
+        "atuin"
+        "zsh-autosuggestions"
+        "zsh-syntax-highlighting"
+        "fzf"
+        "tmux"
+      ];
     };
   in
   {
