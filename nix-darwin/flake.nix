@@ -65,6 +65,7 @@
         "zsh-syntax-highlighting"
         "fzf"
         "tmux"
+        "yazi"
       ];
     };
   in
