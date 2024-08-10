@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME=robbyrussell
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh 
 touch ~/.hushlogin
@@ -28,22 +28,18 @@ alias dx="docker exec -it"
 alias ..="cd ../../"
 alias ...="cd ../../../"
 
-alias ai="ollama run llama3"
-
 alias t="tmux"
 alias tls="tmux list-session"
 alias tks="tmux kill-server"
-alias ta="tmux a"
+alias ta="tmux a -t"
 
 alias ls="eza --tree --level=1 --icons=always --no-time --no-user --no-permissions"
 
-eval "$(fzf --zsh)"
-
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
 . "$HOME/.atuin/bin/env"
 
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 
 bindkey '\t' end-of-line
