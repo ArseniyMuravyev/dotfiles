@@ -44,9 +44,20 @@
         dock.mru-spaces = false;
         finder.AppleShowAllExtensions = true;
         finder.FXPreferredViewStyle = "clmv";
-        loginwindow.LoginwindowText = "Mursey";
         screencapture.location = "~/Pictures/screenshots";
-        screensaver.askForPasswordDelay = 10;
+        screensaver.askForPasswordDelay = 15;
+        dock.show-recents = false;
+        finder.ShowPathbar = true;
+        finder.ShowStatusBar = true;
+        system.defaults.dock.minimize-to-application = true;
+        system.defaults.dock.wvous-br-corner = null;
+        system.defaults.dock.wvous-bl-corner = null;
+        system.defaults.dock.wvous-tr-corner = null;
+        system.defaults.dock.wvous-tr-corner = null;
+        system.defaults.loginwindow.GuestEnabled = false;
+        system.defaults.trackpad.Dragging = true;
+        system.defaults.trackpad.Clicking = true;
+        system.defaults.trackpad.TrackpadThreeFingerDrag = true;
       };
       homebrew.enable = true;
       homebrew.casks = [
