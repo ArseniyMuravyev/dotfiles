@@ -53,7 +53,7 @@
         system.defaults.dock.wvous-br-corner = null;
         system.defaults.dock.wvous-bl-corner = null;
         system.defaults.dock.wvous-tr-corner = null;
-        system.defaults.dock.wvous-tr-corner = null;
+        system.defaults.dock.wvous-tl-corner = null;
         system.defaults.loginwindow.GuestEnabled = false;
         system.defaults.trackpad.Dragging = true;
         system.defaults.trackpad.Clicking = true;
