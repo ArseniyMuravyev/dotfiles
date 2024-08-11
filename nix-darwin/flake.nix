@@ -1,5 +1,5 @@
 {
-  description = "Example Darwin system flake";
+  description = "My Darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -39,6 +39,8 @@
 
       security.pam.enableSudoTouchIdAuth = true;
 
+      nix.configureBuildUsers = true;
+
       system.defaults = {
         dock.autohide = true;
         dock.mru-spaces = false;
@@ -49,15 +51,15 @@
         dock.show-recents = false;
         finder.ShowPathbar = true;
         finder.ShowStatusBar = true;
-        system.defaults.dock.minimize-to-application = true;
-        system.defaults.dock.wvous-br-corner = null;
-        system.defaults.dock.wvous-bl-corner = null;
-        system.defaults.dock.wvous-tr-corner = null;
-        system.defaults.dock.wvous-tl-corner = null;
-        system.defaults.loginwindow.GuestEnabled = false;
-        system.defaults.trackpad.Dragging = true;
-        system.defaults.trackpad.Clicking = true;
-        system.defaults.trackpad.TrackpadThreeFingerDrag = true;
+        dock.minimize-to-application = true;
+        dock.wvous-br-corner = null;
+        dock.wvous-bl-corner = null;
+        dock.wvous-tr-corner = null;
+        dock.wvous-tl-corner = null;
+        loginwindow.GuestEnabled = false;
+        trackpad.Dragging = true;
+        trackpad.Clicking = true;
+        trackpad.TrackpadThreeFingerDrag = true;
       };
       homebrew.enable = true;
       homebrew.casks = [
@@ -84,6 +86,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."Arseniys-MacBook-Air" = nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       modules = [ configuration ];
     };
 
