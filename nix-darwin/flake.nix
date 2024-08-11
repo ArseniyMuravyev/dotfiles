@@ -75,7 +75,6 @@
         "node"
         "atuin"
         "zsh-autosuggestions"
-        "zsh-syntax-highlighting"
         "fzf"
         "tmux"
         "yazi"
