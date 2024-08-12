@@ -78,6 +78,7 @@
         "fzf"
         "tmux"
         "yazi"
+        "ripgrep"
       ];
     };
   in
