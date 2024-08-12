@@ -6,29 +6,26 @@
       "import { FC } from 'react'",
       "",
       "export const ${TM_FILENAME_BASE}: FC = () => {",
-      "    return (",
-      "        <div>",
-      "           <h1>${TM_FILENAME_BASE}</h1>",
-      "        </div>",
-      "    )",
+      "  return (",
+      "    <div>",
+      "      <h1>${TM_FILENAME_BASE}</h1>",
+      "    </div>",
+      "  )",
       "}"
     ],
     "description": "Creates a typed functional component"
   },
   "Next.js TypeScript Arrow Function Component Export": {
-    "prefix": ["ntafce"],
-    "scope": "typescript,typescriptreact",
+    "prefix": ["nfce"],
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
-      "import { NextPage } from 'next'",
-      "",
-      "const page: NextPage = () => {",
-      "    return (",
-      "        <>",
-      "         <h1>page</h1>",
-      "        </>",
-      "    )",
-      "}",
-      "export default page"
+      "export default function Page() {",
+      "  return (",
+      "    <>",
+      "      <h1>page</h1>",
+      "    </>",
+      "  )",
+      "}"
     ],
     "description": "Creates a typed functional component"
   },

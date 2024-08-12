@@ -6,7 +6,7 @@ padding.x = 20
 padding.y = 10
 dimensions = { columns = 120, lines = 32 }
 decorations = "Buttonless"
-opacity = 0.85
+opacity = 0.88
 blur = true
 position = { x = 500, y = 200 }
 startup_mode = "Fullscreen"
