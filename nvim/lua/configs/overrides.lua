@@ -22,6 +22,7 @@ M.mason = {
     "eslint_d",
     "css-lsp",
     "emmet-language-server",
+    "html-lsp",
   },
 }
 
