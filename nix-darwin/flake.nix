@@ -63,7 +63,7 @@
       };
       homebrew.enable = true;
       homebrew.casks = [
-	      "alacritty"
+	      "wezterm"
         "alt-tab"
       ];
       homebrew.brews = [

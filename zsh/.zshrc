@@ -34,6 +34,7 @@ alias tks="tmux kill-server"
 alias ta="tmux a -t"
 
 alias ls="eza --tree --level=1 --icons=always --no-time --no-user --no-permissions"
+alias l="eza -l --icons --git -a"
 
 . "$HOME/.atuin/bin/env"
 
