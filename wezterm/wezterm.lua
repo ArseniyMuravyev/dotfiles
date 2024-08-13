@@ -1,12 +1,12 @@
 local wezterm = require("wezterm")
 return {
-	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
 	font_size = 21.0,
 	font = wezterm.font("JetBrains Mono"),
 	macos_window_background_blur = 30,
-
-	window_background_opacity = 0.9,
+	initial_cols = 110,
+	initial_rows = 32,
+	window_background_opacity = 0.82,
 	window_decorations = "RESIZE",
 	keys = {
 		{
