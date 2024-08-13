@@ -2,6 +2,7 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
+    "html",
     "vim",
     "lua",
     "javascript",
@@ -19,10 +20,12 @@ M.mason = {
     "lua-language-server",
     "typescript-language-server",
     "prettier",
+    "pyright",
     "eslint_d",
     "css-lsp",
     "emmet-language-server",
     "html-lsp",
+    "stylua",
   },
 }
 
