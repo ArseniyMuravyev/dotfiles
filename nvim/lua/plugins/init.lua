@@ -41,14 +41,14 @@ return {
       }
     end,
   },
-  {
-    "Exafunction/codeium.vim",
-    lazy = false,
-    ft = { "python" },
-    lua = function()
-      vim.cmd [[lua require("codeium").disable()]]
-    end,
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   lazy = false,
+  --   ft = { "python" },
+  --   lua = function()
+  --     vim.cmd [[lua require("codeium").disable()]]
+  --   end,
+  -- },
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
@@ -69,6 +69,10 @@ return {
       require("nvim-tree").setup {
         filters = {
           dotfiles = false,
+          custom = { "node_modules", ".DS_Store" },
+        },
+        view = {
+          width = 24,
         },
         git = {
           enable = true,
@@ -103,7 +107,7 @@ return {
       "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
-      "Exafunction/codeium.nvim",
+      -- "Exafunction/codeium.nvim",
     },
     config = function()
       local cmp = require "cmp"
@@ -124,11 +128,11 @@ return {
           { name = "buffer" },
           { name = "nvim_lua" },
           { name = "path" },
-          { name = "codeium" },
+          -- { name = "codeium" },
         },
-        experimental = {
-          ghost_text = true,
-        },
+        -- experimental = {
+        --   ghost_text = true,
+        -- },
         completion = {
           completeopt = "menu,menuone,noinsert,noselect",
           keyword_length = 0,
