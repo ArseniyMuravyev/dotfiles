@@ -2,12 +2,12 @@
 local M = {}
 
 M.ui = {
-  theme = "onedark",
   transparency = true,
   statusline = {
     theme = "minimal",
   },
 }
 
-return M
+M.lsp = { signature = false }
 
+return M

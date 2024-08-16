@@ -6,7 +6,12 @@ return {
       require "configs.conform"
     end,
   },
-
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require "configs.tele"
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -16,16 +21,23 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    opts = {},
+    config = function()
+      require "configs.mason"
+    end,
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {},
-      highlight = {
-        enable = true,
-      },
-    },
+    config = function()
+      require "configs.treesitter"
+    end,
   },
   {
     "L3MON4D3/LuaSnip",
@@ -58,19 +70,7 @@ return {
   {
     "kyazdani42/nvim-tree.lua",
     config = function()
-      require("nvim-tree").setup {
-        filters = {
-          dotfiles = false,
-          custom = { "node_modules", ".DS_Store", ".git" },
-        },
-        view = {
-          width = 24,
-        },
-        git = {
-          enable = true,
-          ignore = false,
-        },
-      }
+      require "configs.nvim-tree"
     end,
   },
   {
@@ -80,14 +80,44 @@ return {
   },
   {
     "folke/trouble.nvim",
+    config = function()
+      require "configs.trouble"
+    end,
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require "configs.obsidian"
+    end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require "configs.zenmode"
+    end,
+  },
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("notify").setup {
+        background_colour = "#000000",
+        enabled = false,
+      }
+    end,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
     opts = {},
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
   },
 }
