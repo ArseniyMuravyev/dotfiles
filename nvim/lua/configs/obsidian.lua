@@ -5,6 +5,7 @@ require("obsidian").setup {
       path = "~/Notes",
     },
   },
+
   mappings = {
     ["gf"] = {
       action = function()
