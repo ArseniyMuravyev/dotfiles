@@ -103,26 +103,27 @@ return {
     end,
   },
   {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("notify").setup {
+        background_colour = "#000000",
+        enabled = false,
+      }
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      messages = { enabled = false },
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
-      },
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
-    {
-      "NvChad/ui",
-      config = function()
-        vim.opt.statusline = ""
-      end,
-    },
-    {
-      "okuuva/auto-save.nvim",
-      cmd = "ASToggle", -- optional for lazy loading on command
-      event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
-      opts = {},
-    },
+  },
+  {
+    "NvChad/ui",
+    config = function()
+      vim.opt.statusline = ""
+    end,
   },
 }

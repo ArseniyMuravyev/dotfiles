@@ -6,6 +6,10 @@ require("obsidian").setup {
     },
   },
 
+  templates = {
+    folder = "~/Notes/Templates/",
+  },
+
   mappings = {
     ["gf"] = {
       action = function()
