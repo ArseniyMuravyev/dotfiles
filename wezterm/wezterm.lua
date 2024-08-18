@@ -1,10 +1,11 @@
 local wezterm = require("wezterm")
 
 return {
+	color_scheme = "Galaxy",
 	enable_tab_bar = false,
 	font_size = 21.0,
 	font = wezterm.font("JetBrains Mono"),
-	macos_window_background_blur = 25,
+	macos_window_background_blur = 30,
 	initial_cols = 105,
 	initial_rows = 30,
 	window_background_opacity = 0.86,
@@ -14,6 +15,11 @@ return {
 			key = "f",
 			mods = "CTRL",
 			action = wezterm.action.ToggleFullScreen,
+		},
+		{
+			key = "'",
+			mods = "CTRL",
+			action = wezterm.action.ClearScrollback("ScrollbackAndViewport"),
 		},
 	},
 	mouse_bindings = {
