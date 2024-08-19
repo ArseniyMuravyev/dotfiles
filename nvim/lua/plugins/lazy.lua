@@ -168,15 +168,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				background_colour = "#000000",
-				enabled = false,
-			})
-		end,
-	},
-	{
 		"folke/noice.nvim",
 		config = function()
 			require("noice").setup({
@@ -185,7 +176,6 @@ require("lazy").setup({
 		end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
 		},
 	},
 	{
@@ -199,7 +189,7 @@ require("lazy").setup({
 			require("nvim-tree").setup({})
 		end,
 	},
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
 	{
 		"preservim/vim-pencil",
 		init = function()

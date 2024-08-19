@@ -18,11 +18,7 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = "yes"
 
-vim.cmd([[colorscheme catppuccin]])
-
-vim.opt.clipboard = "unnamedplus"
-
-vim.o.completeopt = "menuone,noselect"
+vim.cmd([[colorscheme kanagawa]])
 
 vim.o.conceallevel = 2
 
@@ -30,7 +26,11 @@ vim.opt.fillchars = { eob = " " }
 
 vim.opt.wrap = true
 
+vim.opt.shortmess = "I"
+
 vim.o.swapfile = false
+
+vim.opt.laststatus = 0
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

@@ -4,7 +4,7 @@ require("nvim-tree").setup({
 		custom = { "node_modules", ".DS_Store" },
 	},
 	view = {
-		width = 26,
+		width = 24,
 	},
 	git = {
 		enable = true,
