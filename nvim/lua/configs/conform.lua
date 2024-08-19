@@ -7,6 +7,8 @@ local options = {
     typescriptreact = { "prettier" },
     css = { "prettier" },
     html = { "prettier" },
+    python = { "black" },
+    markdown = { "prettier" },
   },
   format_on_save = {
     lsp_fallback = true,

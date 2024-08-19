@@ -103,21 +103,11 @@ return {
     end,
   },
   {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("notify").setup {
-        background_colour = "#000000",
-        enabled = false,
-      }
-    end,
-  },
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {},
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     },
   },
   {
