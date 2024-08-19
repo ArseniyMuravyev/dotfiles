@@ -11,11 +11,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-bindkey '^L' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
-bindkey jj vi-cmd-mode
-
 alias gaa='git add .'
 alias gcm='git commit -m'
 alias gpms='git push -u origin master'
