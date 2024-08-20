@@ -74,14 +74,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
@@ -91,6 +83,39 @@ require("lazy").setup({
 		},
 	},
 	{
+		"nvim-treesitter/nvim-treesitter",
+		build = function()
+			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
+	},
+
+	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+	"nvim-telescope/telescope-symbols.nvim",
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+	{
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({})
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	},
+	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
@@ -141,52 +166,10 @@ require("lazy").setup({
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "neorg" },
+					{ name = "path" },
+					{ name = "nvim_lua" },
 				},
 			})
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = function()
-			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-	},
-
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
-	"nvim-telescope/telescope-symbols.nvim",
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
-	{
-		"folke/trouble.nvim",
-		lazy = false,
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({})
-		end,
-	},
-	{
-		"folke/noice.nvim",
-		config = function()
-			require("noice").setup({
-				messages = { enabled = false },
-			})
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup({})
 		end,
 	},
 	{ "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
@@ -199,4 +182,6 @@ require("lazy").setup({
 	"xiyaowong/transparent.nvim",
 	"folke/zen-mode.nvim",
 	"lewis6991/gitsigns.nvim",
+	"norcalli/nvim-colorizer.lua",
+	"foke/trouble.nvim",
 })
