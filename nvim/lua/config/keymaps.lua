@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap("n", "ww", ":w<enter>", { noremap = false, silent = true
 vim.api.nvim_set_keymap("n", "qw", ":w<enter>:q<enter>", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-x>", ":bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "cc", ":tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("n", "zm", ":ZenMode|Pencil<enter>", { noremap = false, silent = true })

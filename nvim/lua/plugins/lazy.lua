@@ -183,5 +183,27 @@ require("lazy").setup({
 	"folke/zen-mode.nvim",
 	"lewis6991/gitsigns.nvim",
 	"norcalli/nvim-colorizer.lua",
-	"foke/trouble.nvim",
+	{
+		"folke/trouble.nvim",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+		},
+	},
+		{
+			"romgrk/barbar.nvim",
+			dependencies = {
+				"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+			},
+			init = function()
+				vim.g.barbar_auto_setup = false
+			end,
+			opts = {
+			},
+		},
 })

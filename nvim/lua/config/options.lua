@@ -16,6 +16,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.cmd([[colorscheme kanagawa]])
+vim.cmd("hi BufferTabpageFill guibg=transparent")
 
 vim.o.conceallevel = 2
 
