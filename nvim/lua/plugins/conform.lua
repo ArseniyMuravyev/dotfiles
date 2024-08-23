@@ -9,6 +9,7 @@ require("conform").setup({
 		html = { "prettier" },
 		python = { "black" },
 		markdown = { "prettier" },
+		json = { "prettier" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
