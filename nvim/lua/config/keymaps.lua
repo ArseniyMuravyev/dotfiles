@@ -6,6 +6,6 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true,
 vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "cc", ":tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
-vim.keymap.set("n", "zm", ":ZenMode|Pencil<enter>", { noremap = false, silent = true })
-vim.keymap.set("i", "zm", "<Esc>:ZenMode|Pencil<enter>", { noremap = false, silent = true })
+vim.keymap.set("n", "zm", ":ZenMode | Pencil<enter>", { noremap = false, silent = true })
+vim.keymap.set("i", "zm", "<Esc>:ZenMode | Pencil<enter>", { noremap = false, silent = true })
 vim.keymap.set("n", "<S-e>", "<cmd>NvimTreeFocus<CR>", { noremap = true })

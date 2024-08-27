@@ -172,7 +172,11 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{ "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		priority = 1000,
+	},
 	{
 		"preservim/vim-pencil",
 		init = function()

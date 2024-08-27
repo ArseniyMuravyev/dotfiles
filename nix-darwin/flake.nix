@@ -77,7 +77,6 @@
         "zsh-autosuggestions"
         "fzf"
         "tmux"
-        "yazi"
         "ripgrep"
       ];
     };
