@@ -47,7 +47,7 @@
         finder.AppleShowAllExtensions = true;
         finder.FXPreferredViewStyle = "clmv";
         screencapture.location = "~/Pictures/screenshots";
-        screensaver.askForPasswordDelay = 15;
+        screensaver.askForPasswordDelay = 0;
         dock.show-recents = false;
         finder.ShowPathbar = true;
         finder.ShowStatusBar = true;

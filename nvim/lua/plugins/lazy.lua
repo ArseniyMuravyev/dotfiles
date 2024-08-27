@@ -163,11 +163,19 @@ require("lazy").setup({
 						end
 					end, { "i", "s" }),
 				}),
+				experimental = {
+					ghost_text = true,
+				},
+				completion = {
+					completeopt = "menu,menuone,noinsert,noselect",
+					keyword_length = 0,
+				},
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "path" },
 					{ name = "nvim_lua" },
+					{ name = "codeium" },
 				},
 			})
 		end,
@@ -183,10 +191,6 @@ require("lazy").setup({
 			vim.g["pencil#wrapModeDefault"] = "soft"
 		end,
 	},
-	"xiyaowong/transparent.nvim",
-	"folke/zen-mode.nvim",
-	"lewis6991/gitsigns.nvim",
-	"norcalli/nvim-colorizer.lua",
 	{
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -209,4 +213,18 @@ require("lazy").setup({
 		end,
 		opts = {},
 	},
+	{
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
+	"xiyaowong/transparent.nvim",
+	"folke/zen-mode.nvim",
+	"lewis6991/gitsigns.nvim",
+	"norcalli/nvim-colorizer.lua",
 })
