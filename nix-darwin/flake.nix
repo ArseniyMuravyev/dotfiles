@@ -65,6 +65,10 @@
       homebrew.casks = [
 	      "wezterm"
         "alt-tab"
+				"raycast"
+				"arc"
+				"obsidian"
+				"telegram"
       ];
       homebrew.brews = [
         "git"
@@ -78,6 +82,7 @@
         "fzf"
         "tmux"
         "ripgrep"
+				"python"
       ];
     };
   in

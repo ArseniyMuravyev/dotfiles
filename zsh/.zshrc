@@ -11,6 +11,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+alias d="date"
+
 alias gaa='git add .'
 alias gcm='git commit -m'
 alias gpms='git push -u origin master'
@@ -18,7 +20,6 @@ alias gpm='git push -u origin main'
 alias gss='git status -s'
 alias gra='git remote add origin'
 
-alias d="docker"
 alias dco="docker compose"
 alias dps="docker ps"
 alias dpa="docker ps -a"
@@ -44,12 +45,3 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 
 bindkey '\t' end-of-line
-
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}

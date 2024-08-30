@@ -8,7 +8,7 @@ return {
 	initial_cols = 105,
 	initial_rows = 30,
 	macos_window_background_blur = 30,
-	window_background_opacity = 0.9,
+	window_background_opacity = 0.92,
 	window_decorations = "RESIZE",
 	keys = {
 		{
