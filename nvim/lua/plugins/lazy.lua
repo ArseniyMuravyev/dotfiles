@@ -60,11 +60,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"stevearc/dressing.nvim",
-		lazy = false,
-		opts = {},
-	},
-	{
 		"epwalsh/obsidian.nvim",
 		version = "*",
 		lazy = true,
@@ -92,17 +87,28 @@ require("lazy").setup({
 		},
 	},
 
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+	},
 	"nvim-telescope/telescope-symbols.nvim",
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
 	{
 		"folke/noice.nvim",
 		config = function()
-			require("noice").setup({})
+			require("noice").setup({ presets = { inc_rename = true } })
 		end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
 		},
+	},
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -221,6 +227,21 @@ require("lazy").setup({
 		},
 		config = function()
 			require("codeium").setup({})
+		end,
+	},
+	{
+		"rcarriga/nvim-notify",
+		opts = {
+			timeout = 3000,
+		},
+	},
+	{
+		"echasnovski/mini.animate",
+		event = "VeryLazy",
+		opts = function(_, opts)
+			opts.scroll = {
+				enable = false,
+			}
 		end,
 	},
 	"xiyaowong/transparent.nvim",
