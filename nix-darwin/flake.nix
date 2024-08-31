@@ -85,6 +85,7 @@
         "tmux"
         "ripgrep"
 				"python"
+				"lazygit"
       ];
     };
   in
