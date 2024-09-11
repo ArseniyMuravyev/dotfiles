@@ -30,7 +30,7 @@ end
 
 require("mason").setup()
 
-local servers = { "tsserver", "html", "pyright", "emmet_language_server" }
+local servers = { "ts_ls", "html", "pyright", "emmet_language_server" }
 
 require("mason-lspconfig").setup({
 	ensure_installed = servers,

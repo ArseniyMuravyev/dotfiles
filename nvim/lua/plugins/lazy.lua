@@ -218,25 +218,7 @@ require("lazy").setup({
 			timeout = 3000,
 		},
 	},
-	{
-		"echasnovski/mini.animate",
-		event = "VeryLazy",
-		opts = function(_, opts)
-			opts.scroll = {
-				enable = false,
-			}
-		end,
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	},
 	"xiyaowong/transparent.nvim",
 	"folke/zen-mode.nvim",
-	"lewis6991/gitsigns.nvim",
 	"norcalli/nvim-colorizer.lua",
 })
