@@ -121,7 +121,7 @@ require("lazy").setup({
 			require("nvim-tree").setup({})
 		end,
 	},
-	{ -- Autocompletion
+	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
@@ -181,7 +181,6 @@ require("lazy").setup({
 					{ name = "luasnip" },
 					{ name = "path" },
 					{ name = "nvim_lua" },
-					{ name = "codeium" },
 				},
 			})
 		end,
@@ -192,14 +191,8 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{
-		"preservim/vim-pencil",
-		init = function()
-			vim.g["pencil#wrapModeDefault"] = "soft"
-		end,
-	},
-	{
 		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		opts = {},
 		cmd = "Trouble",
 		keys = {
 			{
@@ -212,22 +205,12 @@ require("lazy").setup({
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
-			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+			"nvim-tree/nvim-web-devicons",
 		},
 		init = function()
 			vim.g.barbar_auto_setup = false
 		end,
 		opts = {},
-	},
-	{
-		"Exafunction/codeium.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
-		end,
 	},
 	{
 		"rcarriga/nvim-notify",
@@ -242,6 +225,14 @@ require("lazy").setup({
 			opts.scroll = {
 				enable = false,
 			}
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
 		end,
 	},
 	"xiyaowong/transparent.nvim",

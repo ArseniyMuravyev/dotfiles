@@ -3,9 +3,6 @@ vim.o.hlsearch = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 
-vim.wo.number = true
-vim.o.relativenumber = true
-
 vim.o.mouse = ""
 
 vim.o.breakindent = true

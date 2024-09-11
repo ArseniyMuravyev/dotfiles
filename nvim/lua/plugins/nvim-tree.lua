@@ -1,7 +1,7 @@
 require("nvim-tree").setup({
 	filters = {
 		dotfiles = false,
-		custom = { "node_modules", ".DS_Store", ".git", ".obsidian" },
+		custom = { "node_modules", ".DS_Store", ".git" },
 	},
 	view = {
 		width = 24,
