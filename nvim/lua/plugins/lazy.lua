@@ -218,7 +218,7 @@ require("lazy").setup({
 			timeout = 3000,
 		},
 	},
-	"xiyaowong/transparent.nvim",
 	"folke/zen-mode.nvim",
+	"xiyaowong/transparent.nvim",
 	"norcalli/nvim-colorizer.lua",
 })

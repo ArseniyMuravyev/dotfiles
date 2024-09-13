@@ -12,6 +12,9 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.opt.spelllang = "en_us,ru"
+vim.opt.spell = true
+
 vim.cmd([[colorscheme kanagawa]])
 vim.cmd("hi BufferTabpageFill guibg=transparent")
 
