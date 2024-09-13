@@ -221,4 +221,5 @@ require("lazy").setup({
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
 	"norcalli/nvim-colorizer.lua",
+	"preservim/vim-pencil",
 })
