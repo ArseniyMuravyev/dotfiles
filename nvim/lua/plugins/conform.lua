@@ -7,7 +7,6 @@ require("conform").setup({
 		typescriptreact = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
-		python = { "black" },
 		markdown = { "prettier" },
 		json = { "prettier" },
 	},

@@ -73,7 +73,6 @@ require("lazy").setup({
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-
 			"j-hui/fidget.nvim",
 		},
 	},
@@ -218,8 +217,20 @@ require("lazy").setup({
 			timeout = 3000,
 		},
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({})
+		end,
+	},
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
-	"norcalli/nvim-colorizer.lua",
-	"preservim/vim-pencil",
 })

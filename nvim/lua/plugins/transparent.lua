@@ -1,6 +1,4 @@
--- Optional, you don't have to run setup.
 require("transparent").setup({
-	-- table: default groups
 	groups = {
 		"Normal",
 		"NormalNC",
