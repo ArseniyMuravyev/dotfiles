@@ -12,6 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 alias d="date"
+alias ai="ollama run llama3.1"
 
 alias gaa='git add .'
 alias gcm='git commit -m'
@@ -45,3 +46,4 @@ eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 
 bindkey '\t' end-of-line
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"

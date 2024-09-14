@@ -5,7 +5,7 @@ return {
 	enable_tab_bar = false,
 	font_size = 21.0,
 	font = wezterm.font("JetBrains Mono"),
-	initial_cols = 120,
+	initial_cols = 110,
 	initial_rows = 30,
 	macos_window_background_blur = 35,
 	window_background_opacity = 0.82,
