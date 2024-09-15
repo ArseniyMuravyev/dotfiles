@@ -1,4 +1,6 @@
--- Telescope setup
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+
 require("telescope").setup({
 	defaults = {
 		prompt_prefix = "   ",
@@ -25,24 +27,59 @@ require("telescope").setup({
 					"--hidden",
 					"--strip-cwd-prefix",
 				},
+				mappings = {
+					i = {
+						["<C-c>"] = function(prompt_bufnr) -- Create new file
+							local cwd = vim.fn.getcwd()
+							vim.fn.inputsave()
+							local new_file = vim.fn.input("Create new file: ", cwd .. "/")
+							vim.fn.inputrestore()
+
+							if new_file ~= "" then
+								vim.cmd("edit " .. new_file)
+							end
+						end,
+						["<C-r>"] = function(prompt_bufnr) -- Rename selected file
+							local current_picker = action_state.get_current_picker(prompt_bufnr)
+							local selection = action_state.get_selected_entry()
+							if selection then
+								local old_file = selection.path
+								vim.fn.inputsave()
+								local new_file = vim.fn.input("Rename to: ", old_file)
+								vim.fn.inputrestore()
+
+								if new_file ~= "" and new_file ~= old_file then
+									vim.fn.rename(old_file, new_file)
+								end
+							end
+						end,
+						["<C-d>"] = function(prompt_bufnr) -- Delete selected file
+							local current_picker = action_state.get_current_picker(prompt_bufnr)
+							local selection = action_state.get_selected_entry()
+							if selection then
+								local file_to_delete = selection.path
+								vim.fn.delete(file_to_delete)
+								actions.close(prompt_bufnr)
+							end
+						end,
+					},
+				},
 			},
 		},
 		mappings = {
 			i = {
 				["<C-u>"] = false,
-				["<C-j>"] = require("telescope.actions").move_selection_next,
-				["<C-k>"] = require("telescope.actions").move_selection_previous,
-				["<C-d>"] = require("telescope.actions").move_selection_previous,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-d>"] = actions.move_selection_previous,
 			},
 		},
 	},
 })
 
--- Load the extensions
 pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "file_browser")
 
--- Define a custom function for the file browser
 local function telescope_file_browser()
 	local telescope = require("telescope")
 
@@ -62,7 +99,6 @@ local function telescope_file_browser()
 	})
 end
 
--- Setup key mappings
 vim.keymap.set("n", "<leader>/", function()
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 		previewer = true,
@@ -88,3 +124,5 @@ vim.keymap.set(
 	telescope_file_browser,
 	{ desc = "Open File Browser with the path of the current buffer" }
 )
+
+vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#D3D3D3", fg = "#000000" })

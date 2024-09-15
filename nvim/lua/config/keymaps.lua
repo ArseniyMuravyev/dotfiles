@@ -8,7 +8,6 @@ vim.api.nvim_set_keymap("n", "cc", ":tabnew<CR>", { noremap = true, silent = tru
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("n", "zm", ":ZenMode<enter>", { noremap = false, silent = true })
 vim.keymap.set("i", "zm", "<Esc>:ZenMode<enter>", { noremap = false, silent = true })
-vim.keymap.set("n", "<S-e>", "<cmd>NvimTreeFocus<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

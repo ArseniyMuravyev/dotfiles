@@ -85,11 +85,66 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 	},
-
+	{
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+		keys = {
+			{
+				"sf",
+				function()
+					local telescope = require("telescope")
+
+					local function telescope_buffer_dir()
+						return vim.fn.expand("%:p:h")
+					end
+
+					telescope.extensions.file_browser.file_browser({
+						path = "%:p:h",
+						cwd = telescope_buffer_dir(),
+						respect_gitignore = false,
+						hidden = true,
+						grouped = true,
+						previewer = false,
+						initial_mode = "normal",
+						layout_config = { height = 40 },
+					})
+				end,
+				desc = "Open File Browser with the path of the current buffer",
+			},
+		},
+		config = function()
+			require("telescope").setup({
+				extensions = {
+					file_browser = {
+						theme = "dropdown",
+						hijack_netrw = true, -- заменяем netrw на telescope-file-browser
+						mappings = {
+							["n"] = {
+								["N"] = require("telescope").extensions.file_browser.actions.create, -- создание файла/директории
+								["D"] = require("telescope").extensions.file_browser.actions.remove, -- удаление файла/директории
+								["R"] = require("telescope").extensions.file_browser.actions.rename, -- переименование файла/директории
+								["h"] = require("telescope").extensions.file_browser.actions.goto_parent_dir, -- перейти в родительскую директорию
+								["/"] = function()
+									vim.cmd("startinsert")
+								end, -- переход в режим вставки
+							},
+						},
+					},
+				},
+			})
+			require("telescope").load_extension("file_browser")
+		end,
 	},
 	"nvim-telescope/telescope-symbols.nvim",
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
@@ -107,17 +162,6 @@ require("lazy").setup({
 		"smjonas/inc-rename.nvim",
 		config = function()
 			require("inc_rename").setup()
-		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup({})
 		end,
 	},
 	{
@@ -168,9 +212,6 @@ require("lazy").setup({
 						end
 					end, { "i", "s" }),
 				}),
-				experimental = {
-					ghost_text = true,
-				},
 				completion = {
 					completeopt = "menu,menuone,noinsert,noselect",
 					keyword_length = 0,
@@ -180,6 +221,7 @@ require("lazy").setup({
 					{ name = "luasnip" },
 					{ name = "path" },
 					{ name = "nvim_lua" },
+					{ name = "codeium" },
 				},
 			})
 		end,
@@ -214,7 +256,8 @@ require("lazy").setup({
 	{
 		"rcarriga/nvim-notify",
 		opts = {
-			timeout = 3000,
+			timeout = 1500,
+			render = "compact",
 		},
 	},
 	{
