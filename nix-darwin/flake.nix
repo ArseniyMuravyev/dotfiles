@@ -86,6 +86,7 @@
         "ripgrep"
 				"python"
 				"lazygit"
+				"hub"
       ];
     };
   in
