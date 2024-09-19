@@ -14,6 +14,16 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.opt.number = true
+
+vim.opt.title = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.hlsearch = true
+vim.opt.backup = false
+vim.opt.showcmd = true
+vim.opt.cmdheight = 1
+
 vim.opt.spelllang = "en_us,ru"
 vim.opt.spell = true
 
@@ -26,6 +36,9 @@ vim.opt.fillchars = { eob = " " }
 
 vim.opt.shortmess:append("sI")
 vim.opt.whichwrap:append("<>[]hl")
+
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.opt.laststatus = 0
 
