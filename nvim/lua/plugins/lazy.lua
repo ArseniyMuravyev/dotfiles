@@ -86,17 +86,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"Exafunction/codeium.nvim",
-		commit = "822e762567a0bf50b1a4e733c8c93691934d7606",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
-		end,
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
@@ -222,7 +211,6 @@ require("lazy").setup({
 					{ name = "luasnip" },
 					{ name = "path" },
 					{ name = "nvim_lua" },
-					{ name = "codeium" },
 				},
 			})
 		end,
