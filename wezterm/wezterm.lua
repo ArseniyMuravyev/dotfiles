@@ -4,7 +4,10 @@ return {
 	color_scheme = "Kanagawa (Gogh)",
 	enable_tab_bar = false,
 	font_size = 21.0,
-	font = wezterm.font("JetBrains Mono"),
+	font = wezterm.font_with_fallback({
+		"BlexMono Nerd Font",
+		"JetBrains Mono",
+	}),
 	initial_cols = 110,
 	initial_rows = 30,
 	macos_window_background_blur = 35,
@@ -16,6 +19,7 @@ return {
 			mods = "CTRL",
 			action = wezterm.action.ToggleFullScreen,
 		},
+		{ key = "r", mods = "CTRL", action = wezterm.action.ReloadConfiguration },
 	},
 	mouse_bindings = {
 		{

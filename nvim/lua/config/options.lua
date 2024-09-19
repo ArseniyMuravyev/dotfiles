@@ -52,5 +52,9 @@ vim.o.completeopt = "menuone,noselect"
 vim.opt.langmap =
 	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 
+vim.cmd("hi @comment gui=italic")
+vim.cmd("hi @keyword gui=italic")
+vim.cmd("hi @constant gui=italic")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
