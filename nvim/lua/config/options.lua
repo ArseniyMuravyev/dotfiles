@@ -27,7 +27,8 @@ vim.opt.cmdheight = 1
 vim.opt.spelllang = "en_us,ru"
 vim.opt.spell = true
 
-vim.cmd([[colorscheme kanagawa]])
+vim.cmd([[colorscheme solarized-osaka]])
+
 vim.cmd("hi BufferTabpageFill guibg=transparent")
 
 vim.o.conceallevel = 2

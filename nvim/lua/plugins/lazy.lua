@@ -216,9 +216,14 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"rebelot/kanagawa.nvim",
-		name = "kanagawa",
+		"craftzdog/solarized-osaka.nvim",
+		lazy = true,
 		priority = 1000,
+		opts = function()
+			return {
+				transparent = true,
+			}
+		end,
 	},
 	{
 		"folke/trouble.nvim",
@@ -257,6 +262,18 @@ require("lazy").setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			vim.api.nvim_create_autocmd("BufEnter", {
+				pattern = "*",
+				callback = function()
+					vim.cmd("ColorizerAttachToBuffer")
+				end,
+			})
+		end,
+	},
+	"themaxmarchuk/tailwindcss-colors.nvim",
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
 })
