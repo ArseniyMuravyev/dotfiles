@@ -19,10 +19,7 @@ vim.opt.number = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.hlsearch = true
 vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 1
 
 vim.opt.spelllang = "en_us,ru"
 vim.opt.spell = true
@@ -41,10 +38,9 @@ vim.opt.whichwrap:append("<>[]hl")
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
-vim.opt.laststatus = 0
+vim.opt.formatoptions:append({ "r" })
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+vim.opt.laststatus = 0
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -56,6 +52,9 @@ vim.opt.langmap =
 vim.cmd("hi @comment gui=italic")
 vim.cmd("hi @keyword gui=italic")
 vim.cmd("hi @constant gui=italic")
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

@@ -1,7 +1,6 @@
 require("config.keymaps")
 require("plugins.lazy")
 require("config.options")
-require("config.discipline")
 require("plugins.tele")
 require("plugins.treesitter")
 require("plugins.lsp")
