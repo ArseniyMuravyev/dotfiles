@@ -87,6 +87,7 @@
 				"python"
 				"lazygit"
 				"hub"
+				"zsh-syntax-highlighting"
       ];
     };
   in
