@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "Kanagawa (Gogh)",
+	color_scheme = "Solarized Dark (Gogh)",
 	enable_tab_bar = false,
 	font_size = 21.0,
 	font = wezterm.font_with_fallback({

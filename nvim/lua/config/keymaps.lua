@@ -7,7 +7,6 @@ vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, sile
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("n", "zm", ":ZenMode<enter>", { noremap = false, silent = true })
 vim.keymap.set("i", "zm", "<Esc>:ZenMode<enter>", { noremap = false, silent = true })
-vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })

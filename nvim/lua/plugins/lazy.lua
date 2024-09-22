@@ -136,8 +136,6 @@ require("lazy").setup({
 			require("telescope").load_extension("file_browser")
 		end,
 	},
-	"nvim-telescope/telescope-symbols.nvim",
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
 	{
 		"folke/noice.nvim",
 		config = function()
@@ -149,19 +147,12 @@ require("lazy").setup({
 		},
 	},
 	{
-		"smjonas/inc-rename.nvim",
-		config = function()
-			require("inc_rename").setup()
-		end,
-	},
-	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-emoji",
 		},
 	},
 	{
@@ -202,14 +193,6 @@ require("lazy").setup({
 			timeout = 1500,
 			render = "compact",
 		},
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
 	},
 	{
 		"norcalli/nvim-colorizer.lua",

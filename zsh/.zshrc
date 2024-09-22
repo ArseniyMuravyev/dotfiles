@@ -20,6 +20,9 @@ alias gpms='git push -u origin master'
 alias gpm='git push -u origin main'
 alias gss='git status -s'
 alias gra='git remote add origin'
+alias ghist='git log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'
+
+alias gopen='hub browse'
 
 alias dco="docker compose"
 alias dps="docker ps"

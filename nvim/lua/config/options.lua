@@ -38,23 +38,22 @@ vim.opt.whichwrap:append("<>[]hl")
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
-vim.opt.formatoptions:append({ "r" })
-
 vim.opt.laststatus = 0
 
 vim.opt.clipboard = "unnamedplus"
 
 vim.o.completeopt = "menuone,noselect"
-
-vim.opt.langmap =
-	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
-
 vim.cmd("hi @comment gui=italic")
 vim.cmd("hi @keyword gui=italic")
 vim.cmd("hi @constant gui=italic")
 
+vim.opt.langmap =
+	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.o.termguicolors = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
