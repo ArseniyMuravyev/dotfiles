@@ -32,7 +32,7 @@ return {
 			}),
 		},
 	},
-	initial_cols = 86,
+	initial_cols = 88,
 	initial_rows = 25,
 	macos_window_background_blur = 35,
 	window_background_opacity = 0.82,
