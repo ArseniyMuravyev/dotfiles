@@ -1,15 +1,39 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "Solarized Dark (Gogh)",
+	color_scheme = "Dracula",
 	enable_tab_bar = false,
 	font_size = 21.0,
 	font = wezterm.font_with_fallback({
 		"BlexMono Nerd Font",
 		"JetBrains Mono",
 	}),
-	initial_cols = 110,
-	initial_rows = 30,
+	font_rules = {
+		{
+			italic = true,
+			font = wezterm.font({
+				family = "BlexMono Nerd Font",
+				style = "Italic",
+			}),
+		},
+		{
+			italic = true,
+			font = wezterm.font({
+				family = "BlexMono Nerd Font",
+				style = "Italic",
+			}),
+		},
+		{
+			italic = true,
+			intensity = "Normal",
+			font = wezterm.font({
+				family = "BlexMono Nerd Font",
+				style = "Italic",
+			}),
+		},
+	},
+	initial_cols = 86,
+	initial_rows = 25,
 	macos_window_background_blur = 35,
 	window_background_opacity = 0.82,
 	window_decorations = "RESIZE",
