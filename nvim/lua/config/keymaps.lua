@@ -10,3 +10,4 @@ vim.keymap.set("i", "zm", "<Esc>:ZenMode<enter>", { noremap = false, silent = tr
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-g>", ":LazyGit<CR>", { noremap = true })
