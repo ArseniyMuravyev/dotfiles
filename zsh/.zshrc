@@ -50,3 +50,9 @@ eval "$(atuin init zsh)"
 
 bindkey '\t' end-of-line
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
+export TERM=xterm-256color
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin

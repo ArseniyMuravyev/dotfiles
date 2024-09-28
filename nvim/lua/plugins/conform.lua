@@ -8,6 +8,7 @@ require("conform").setup({
 		css = { "prettier" },
 		html = { "prettier" },
 		json = { "prettier" },
+		go = { "gofumt" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
