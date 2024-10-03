@@ -167,15 +167,11 @@ require("lazy").setup({
 	},
 	{
 		"folke/trouble.nvim",
-		opts = {},
-		cmd = "Trouble",
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-		},
+		lazy = false,
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({})
+		end,
 	},
 	{
 		"romgrk/barbar.nvim",
