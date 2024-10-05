@@ -1,6 +1,7 @@
 vim.api.nvim_set_keymap("n", "qq", ":q<enter>", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "ww", ":w<enter>", { noremap = false, silent = true })
-
+vim.api.nvim_set_keymap("n", "qw", ":w<enter>:q<enter>", { noremap = false, silent = true })
+vim.api.nvim_set_keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-x>", ":BufferClose<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
