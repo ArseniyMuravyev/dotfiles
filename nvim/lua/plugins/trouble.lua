@@ -8,9 +8,9 @@ vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = tr
 -- Diagnostic signs
 -- https://github.com/folke/trouble.nvim/issues/52
 local signs = {
-	Error = " ",
+	Error = " ",
 	Warning = " ",
-	Hint = " ",
+	Hint = " ",
 	Information = " ",
 }
 for type, icon in pairs(signs) do
