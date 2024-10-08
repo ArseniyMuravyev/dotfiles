@@ -88,6 +88,7 @@
 				"lazygit"
 				"hub"
 				"zsh-syntax-highlighting"
+				"bat"
       ];
     };
   in
