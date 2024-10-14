@@ -11,24 +11,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-alias d="date"
-alias ai="ollama run llama3.1"
+bindkey '^L' vi-forward-word
+bindkey '^B' vi-back-word
 
+alias d="date"
+
+alias gd="git diff"
 alias gaa='git add .'
 alias gcm='git commit -m'
 alias gpms='git push -u origin master'
 alias gpm='git push -u origin main'
-alias gss='git status -s'
+alias gs='git status -s'
 alias gra='git remote add origin'
 alias ghist='git log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'
-
 alias gopen='hub browse'
-
-alias dco="docker compose"
-alias dps="docker ps"
-alias dpa="docker ps -a"
-alias dl="docker ps -l -q"
-alias dx="docker exec -it"
 
 alias ..="cd ../../"
 alias ...="cd ../../../"
