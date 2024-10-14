@@ -112,6 +112,10 @@ local options = {
 		{ name = "buffer" },
 		{ name = "path" },
 	},
+
+	experimental = {
+		ghost_text = true,
+	},
 }
 
 -- Setup cmp
