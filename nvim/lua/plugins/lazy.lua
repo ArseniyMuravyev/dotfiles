@@ -222,7 +222,7 @@ require("lazy").setup({
 		keys = {
 			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
 			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-			{ "<S-x>", "<Cmd>bdelete<CR>", desc = "Close current buffer" },
+			{ "<S-x>", "<Cmd>bdelete<CR>", desc = "Close current buffer without exiting ZenMode" },
 		},
 		opts = {
 			options = {

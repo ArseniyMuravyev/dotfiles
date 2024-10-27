@@ -32,10 +32,10 @@ return {
 			}),
 		},
 	},
-	initial_cols = 88,
-	initial_rows = 25,
+	initial_cols = 100,
+	initial_rows = 28,
 	macos_window_background_blur = 35,
-	window_background_opacity = 0.82,
+	window_background_opacity = 0.9,
 	window_decorations = "RESIZE",
 	keys = {
 		{
