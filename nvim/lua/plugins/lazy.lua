@@ -28,20 +28,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"L3MON4D3/LuaSnip",
-		config = function()
-			local luasnip = require("luasnip")
-			luasnip.config.set_config({
-				history = true,
-				updateevents = "TextChanged,TextChangedI",
-			})
-
-			require("luasnip.loaders.from_vscode").lazy_load({
-				paths = { vim.fn.stdpath("config") .. "/snippets" },
-			})
-		end,
-	},
-	{
 		"mfussenegger/nvim-lint",
 		event = "VeryLazy",
 	},
@@ -105,9 +91,9 @@ require("lazy").setup({
 						respect_gitignore = false,
 						hidden = true,
 						grouped = true,
-						previewer = false,
+						previewer = true,
 						initial_mode = "normal",
-						layout_config = { height = 40 },
+						layout_config = { height = 50, weight = 500 },
 					})
 				end,
 				desc = "Open File Browser with the path of the current buffer",
@@ -151,8 +137,6 @@ require("lazy").setup({
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
 		},
 	},
 	{

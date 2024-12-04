@@ -93,9 +93,9 @@ local function telescope_file_browser()
 		respect_gitignore = false,
 		hidden = true,
 		grouped = true,
-		previewer = false,
+		previewer = true,
 		initial_mode = "normal",
-		layout_config = { height = 40 },
+		layout_config = { height = 50, width = 100 },
 	})
 end
 
