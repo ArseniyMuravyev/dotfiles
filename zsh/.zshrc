@@ -39,7 +39,6 @@ alias l="eza -l --icons --git -a"
 
 . "$HOME/.atuin/bin/env"
 
-eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
@@ -49,6 +48,3 @@ export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 
 export TERM=xterm-256color
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin

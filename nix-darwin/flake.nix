@@ -65,12 +65,6 @@
       homebrew.enable = true;
       homebrew.casks = [
 	      "wezterm"
-        "alt-tab"
-				"raycast"
-				"arc"
-				"obsidian"
-				"telegram"
-				"microsoft-excel"
       ];
       homebrew.brews = [
         "git"
@@ -78,17 +72,14 @@
         "eza"
         "starship"
         "neovim"
-        "node"
         "atuin"
         "zsh-autosuggestions"
-        "fzf"
         "tmux"
         "ripgrep"
-				"python"
 				"lazygit"
-				"hub"
 				"zsh-syntax-highlighting"
 				"bat"
+				"nvm"
       ];
     };
   in
