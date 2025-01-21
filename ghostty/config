@@ -9,4 +9,5 @@ background-blur-radius = 20
 font-family = BlexMono Nerd Font
 theme = ayu
 auto-update = check 
+window-padding-x = 8
 
