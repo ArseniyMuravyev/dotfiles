@@ -143,6 +143,7 @@ require("lazy").setup({
 		"rcarriga/nvim-notify",
 		opts = {
 			timeout = 1500,
+			background_colour = "#000000",
 			render = "compact",
 		},
 	},

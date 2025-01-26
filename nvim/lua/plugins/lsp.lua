@@ -2,16 +2,6 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 local on_attach = function(client, bufnr)
-	-- Attach tailwindcss-colors only if the current client is Tailwind CSS
-	if client.name == "tailwindcss" then
-		local status_ok, tailwindcss_colors = pcall(require, "tailwindcss-colors")
-		if status_ok then
-			tailwindcss_colors.buf_attach(bufnr)
-		else
-			print("tailwindcss-colors plugin not found.")
-		end
-	end
-
 	-- Existing key mappings and user command
 	local nmap = function(keys, func, desc)
 		if desc then
