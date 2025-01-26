@@ -9,3 +9,6 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.api.nvim_set_keymap("n", "cc", ":nohlsearch<enter>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-g>", ":LazyGit<CR>", { noremap = true })
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferPrevious<CR>", opts)
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { noremap = false, silent = true })
+vim.keymap.set("n", "<S-x>", "<Cmd>BufferClose<CR>", { noremap = false, silent = true })

@@ -11,11 +11,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-bindkey '^L' vi-forward-word
-bindkey '^B' vi-back-word
-
-alias d="date"
-
 alias gd="git diff"
 alias gaa='git add .'
 alias gcm='git commit -m'
@@ -24,7 +19,6 @@ alias gpm='git push -u origin main'
 alias gs='git status -s'
 alias gra='git remote add origin'
 alias ghist='git log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'
-alias gopen='hub browse'
 
 alias ..="cd ../../"
 alias ...="cd ../../../"

@@ -24,10 +24,6 @@ vim.opt.backup = false
 vim.opt.spelllang = "en_us,ru"
 vim.opt.spell = true
 
-vim.cmd([[colorscheme solarized-osaka]])
-
-vim.cmd("hi BufferTabpageFill guibg=transparent")
-
 vim.o.conceallevel = 2
 
 vim.opt.fillchars = { eob = " " }
@@ -57,3 +53,5 @@ vim.o.termguicolors = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.cmd.colorscheme("catppuccin")

@@ -140,40 +140,11 @@ require("lazy").setup({
 		},
 	},
 	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = true,
-		priority = 1000,
-		opts = function()
-			return {
-				transparent = true,
-			}
-		end,
-	},
-	{
-		"folke/trouble.nvim",
-		lazy = false,
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({})
-		end,
-	},
-	{
 		"rcarriga/nvim-notify",
 		opts = {
 			timeout = 1500,
 			render = "compact",
 		},
-	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			vim.api.nvim_create_autocmd("BufEnter", {
-				pattern = "*",
-				callback = function()
-					vim.cmd("ColorizerAttachToBuffer")
-				end,
-			})
-		end,
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -201,22 +172,48 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
-		keys = {
-			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-			{ "<S-x>", "<Cmd>bdelete<CR>", desc = "Close current buffer without exiting ZenMode" },
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
 		},
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
 		opts = {
-			options = {
-				mode = "buffers",
-				show_buffer_close_icons = false,
-				show_close_icon = false,
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		transparent_background = true, -- Enable transparency
+		term_colors = true, -- Enable terminal colors
+		integrations = {
+			treesitter = true,
+			native_lsp = {
+				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+				},
+			},
+			bufferline = true,
+			cmp = true,
+			gitsigns = true,
+			telescope = true,
+			nvimtree = true,
+			indent_blankline = {
+				enabled = true,
+				colored_indent_levels = false,
 			},
 		},
 	},
-	"themaxmarchuk/tailwindcss-colors.nvim",
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
 })
