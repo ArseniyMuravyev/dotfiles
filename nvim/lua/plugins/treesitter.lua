@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"css",
 		"markdown",
+		"markdown_inline",
 		"python",
 	},
 	highlight = { enable = true, additional_vim_regex_highlighting = false },
