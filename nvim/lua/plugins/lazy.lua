@@ -191,6 +191,7 @@ require("lazy").setup({
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
+		priority = 1000,
 		transparent_background = true, -- Enable transparency
 		term_colors = true, -- Enable terminal colors
 		integrations = {
