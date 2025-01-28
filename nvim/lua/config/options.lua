@@ -53,3 +53,6 @@ vim.o.termguicolors = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+vim.cmd("autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("autocmd VimEnter * hi ZenBg guibg=NONE")
