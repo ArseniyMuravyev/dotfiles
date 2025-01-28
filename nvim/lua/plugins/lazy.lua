@@ -104,16 +104,16 @@ require("lazy").setup({
 				extensions = {
 					file_browser = {
 						theme = "dropdown",
-						hijack_netrw = true, -- заменяем netrw на telescope-file-browser
+						hijack_netrw = true,
 						mappings = {
 							["n"] = {
-								["N"] = require("telescope").extensions.file_browser.actions.create, -- создание файла/директории
-								["D"] = require("telescope").extensions.file_browser.actions.remove, -- удаление файла/директории
-								["R"] = require("telescope").extensions.file_browser.actions.rename, -- переименование файла/директории
-								["h"] = require("telescope").extensions.file_browser.actions.goto_parent_dir, -- перейти в родительскую директорию
+								["N"] = require("telescope").extensions.file_browser.actions.create,
+								["D"] = require("telescope").extensions.file_browser.actions.remove,
+								["R"] = require("telescope").extensions.file_browser.actions.rename,
+								["h"] = require("telescope").extensions.file_browser.actions.goto_parent_dir,
 								["/"] = function()
 									vim.cmd("startinsert")
-								end, -- переход в режим вставки
+								end,
 							},
 						},
 					},
@@ -175,24 +175,19 @@ require("lazy").setup({
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
-			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
-			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+			"lewis6991/gitsigns.nvim",
+			"nvim-tree/nvim-web-devicons",
 		},
 		init = function()
 			vim.g.barbar_auto_setup = false
 		end,
-		opts = {
-			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-			-- animation = true,
-			-- insert_at_start = true,
-			-- …etc.
-		},
+		opts = {},
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		transparent_background = true, -- Enable transparency
-		term_colors = true, -- Enable terminal colors
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
