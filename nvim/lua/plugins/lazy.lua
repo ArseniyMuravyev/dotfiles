@@ -192,3 +192,26 @@ require("lazy").setup({
 	"folke/zen-mode.nvim",
 	"xiyaowong/transparent.nvim",
 })
+
+local function set_theme_based_on_system()
+	-- Используем os.execute для определения системной темы (работает для Linux/MacOS)
+	local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null") -- macOS
+	local result = handle:read("*a")
+	handle:close()
+
+	-- Устанавливаем тему в зависимости от результата
+	if result:match("Dark") then
+		vim.o.background = "dark"
+		vim.cmd("colorscheme tokyonight")
+	else
+		vim.o.background = "light"
+		vim.cmd("colorscheme tokyonight-day")
+	end
+end
+
+-- Вызываем функцию при старте Neovim
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		set_theme_based_on_system()
+	end,
+})
