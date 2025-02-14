@@ -5,7 +5,7 @@ require("zen-mode").setup({
 		height = 1, -- height of the Zen window
 		options = {
 			signcolumn = "no", -- disable signcolumn
-			number = true, -- disable number column
+			number = false, -- disable number column
 			relativenumber = false, -- disable relative numbers
 			-- cursorline = false, -- disable cursorline
 			-- cursorcolumn = false, -- disable cursor column
